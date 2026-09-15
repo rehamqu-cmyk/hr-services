@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Resources | استشارات وخدمات الموارد البشرية</title>
+    <title>Human Resources | Reham HR</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@800&family=Playfair+Display:ital,wght@1,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,7 +14,7 @@
             --accent-pink: #ec4899;
             --soft-rose: #fbcfe8;
             --dark-pink: #be185d;
-            --text-dark: #475569;
+            --text-dark: #334155;
             --bg-light: #fff5f7;
             --card-bg: #ffffff;
         }
@@ -28,47 +28,105 @@
             line-height: 1.8; 
         }
 
+        /* الهيدر بتنسيق ممتلئ وأنيق */
         header { 
-            background: #ffffff; 
-            color: #334155; 
-            text-align: center; 
-            padding: 50px 20px 30px 20px; 
+            background: linear-gradient(180deg, #ffffff 0%, #fff0f5 100%); 
+            padding: 40px 20px 35px 20px; 
             border-bottom: 2px solid var(--primary-pink);
-            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.05);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.06);
         }
 
-        /* حاوية اللوجو الدائري */
-        .logo-box {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 15px auto;
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* كروت التفاصيل الجانبية (يمين ويسار) */
+        .header-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--soft-rose);
+            border-right: 5px solid var(--accent-pink);
+            border-radius: 16px;
+            padding: 20px 22px;
+            flex: 1;
+            min-width: 260px;
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.08);
             transition: transform 0.3s ease;
         }
 
-        .logo-box:hover {
-            transform: scale(1.04);
+        .header-card:hover {
+            transform: translateY(-50%);
         }
 
-        header h1 { 
-            font-family: 'Playfair Display', serif;
-            margin: 10px 0 5px 0; 
-            font-size: 2.2em; 
+        .header-card.left-card {
+            border-right: 1px solid var(--soft-rose);
+            border-left: 5px solid var(--accent-pink);
+        }
+
+        .header-card h4 {
+            margin: 0 0 8px 0;
             color: var(--dark-pink);
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        header p { 
-            font-size: 1.15em; 
+        .header-card p {
+            margin: 0;
+            font-size: 0.95em;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* قسم اللوجو بالوسط */
+        .logo-center {
+            text-align: center;
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-box {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 10px auto;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 10px 15px rgba(236, 72, 153, 0.12));
+        }
+
+        .logo-box:hover {
+            transform: scale(1.03);
+        }
+
+        .logo-center h1 { 
+            font-family: 'Playfair Display', serif;
+            margin: 10px 0 3px 0; 
+            font-size: 2.3em; 
+            color: var(--dark-pink);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-center p { 
+            font-size: 1.05em; 
             color: #64748b; 
-            max-width: 600px; 
-            margin: 5px auto 0 auto; 
+            margin: 0; 
+            font-weight: 500;
         }
         
+        /* باقي أجزاء الموقع */
         .container { max-width: 1080px; margin: 40px auto; padding: 0 20px; }
         .section-title { 
             text-align: center; 
             color: var(--dark-pink); 
             margin-bottom: 40px; 
-            font-size: 1.9em; 
+            font-size: 2em; 
             font-weight: 700;
         }
 
@@ -141,42 +199,68 @@
         .btn:hover { background: #1eb857; transform: scale(1.05); }
 
         footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.9em; margin-top: 40px; }
+
+        @media (max-width: 900px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .header-card { width: 100%; min-width: auto; }
+            .logo-center { order: -1; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <!-- اللوجو الدائري الزهري المصمم كوداً -->
-    <div class="logo-box">
-        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="150" cy="150" r="140" fill="#ffffff" stroke="#fbcfe8" stroke-width="4" />
-            <circle cx="150" cy="150" r="132" fill="none" stroke="#ec4899" stroke-width="2" stroke-dasharray="4,4" />
-            
-            <path id="textArcHeader" fill="none" stroke="none" d="M 40 150 A 110 110 0 0 1 260 150" />
-            
-            <text fill="#be185d" font-size="16" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" letter-spacing="3.5">
-                <textPath href="#textArcHeader" startOffset="50%" text-anchor="middle">
-                    HUMAN RESOURCES
-                </textPath>
-            </text>
+    <div class="header-container">
+        <!-- الكارت الأيمن: الخبرة والشهادات -->
+        <div class="header-card">
+            <h4>🏆 خبرة أكثر من 10 سنوات</h4>
+            <p>متخصصون في إدارة الموارد البشرية وتطوير المؤسسات والشركات بكفاءة عالية وفق أعلى المعايير مع شهادات خبرة معتمدة.</p>
+        </div>
 
-            <g transform="translate(150, 130) scale(0.85)">
-                <path d="M0 -35 C15 -35 25 -20 25 0 C25 20 0 35 0 35 C0 35 -25 20 -25 0 C-25 -20 -15 -35 0 -35 Z" fill="#f472b6" opacity="0.8" />
-                <path d="M-35 0 C-35 -15 -20 -25 0 -25 C20 -25 35 0 35 0 C35 0 20 25 0 25 C-20 25 -35 15 -35 0 Z" fill="#f472b6" opacity="0.8" />
-                <path d="M-25 -25 C-10 -35 10 -35 25 -25 C35 -10 35 10 25 25 C10 35 -10 35 -25 25 C-35 10 -35 -10 -25 -25 Z" fill="#ec4899" opacity="0.6" />
-                <circle cx="0" cy="0" r="12" fill="#be185d" />
-                <circle cx="0" cy="0" r="6" fill="#ffffff" />
-            </g>
+        <!-- الجزء الأوسط: اللوجو المطور لـ REHAM -->
+        <div class="logo-center">
+            <div class="logo-box">
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- الإطار الدائري الفخم -->
+                    <circle cx="150" cy="150" r="142" fill="#ffffff" stroke="#fbcfe8" stroke-width="5" />
+                    <circle cx="150" cy="150" r="130" fill="none" stroke="#be185d" stroke-width="2.5" stroke-dasharray="6,4" />
+                    
+                    <!-- قوس HUMAN RESOURCES العلوي -->
+                    <path id="textArcHeader" fill="none" stroke="none" d="M 35 150 A 115 115 0 0 1 265 150" />
+                    <text fill="#831843" font-size="20" font-family="'Montserrat', sans-serif" font-weight="800" letter-spacing="3.5">
+                        <textPath href="#textArcHeader" startOffset="50%" text-anchor="middle">
+                            HUMAN RESOURCES
+                        </textPath>
+                    </text>
 
-            <text x="150" y="225" text-anchor="middle" fill="#be185d" font-size="42" font-family="'Playfair Display', 'Georgia', serif" font-weight="bold" font-style="italic">
-                R
-            </text>
-            <circle cx="150" cy="242" r="2.5" fill="#ec4899" />
-        </svg>
+                    <!-- رسمة الوردة الأنيقة والواضحة بالوسط -->
+                    <g transform="translate(150, 134) scale(1.15)">
+                        <path d="M0 -28 C14 -28 22 -15 22 0 C22 15 0 28 0 28 C0 28 -22 15 -22 0 C-22 -15 -14 -28 0 -28 Z" fill="#ec4899" opacity="0.85" />
+                        <path d="M-28 0 C-28 -14 -15 -22 0 -22 C15 -22 28 0 28 0 C28 0 15 22 0 22 C-15 22 -28 14 -28 0 Z" fill="#ec4899" opacity="0.85" />
+                        <path d="M-20 -20 C-8 -28 8 -28 20 -20 C28 -8 28 8 20 20 C8 28 -8 28 -20 20 C-28 8 -28 -8 -20 -20 Z" fill="#db2777" opacity="0.9" />
+                        <circle cx="0" cy="0" r="10" fill="#be185d" />
+                        <circle cx="0" cy="0" r="4" fill="#ffffff" />
+                    </g>
+
+                    <!-- اسم REHAM المزخرف والمكتوب بوضوح بالأصل سفل اللوجو -->
+                    <text x="150" y="238" text-anchor="middle" fill="#be185d" font-size="34" font-family="'Cinzel', 'Playfair Display', serif" font-weight="bold" letter-spacing="4">
+                        REHAM
+                    </text>
+                    
+                    <!-- نقطة الزينة السفلية -->
+                    <circle cx="150" cy="254" r="3" fill="#ec4899" />
+                </svg>
+            </div>
+            <h1>Human Resources</h1>
+            <p>استشارات وإدارة الموارد البشرية</p>
+        </div>
+
+        <!-- الكارت الأيسر: الموقع والتغطية -->
+        <div class="header-card left-card">
+            <h4>📍 العقبة - الأردن</h4>
+            <p>نقدم خدماتنا في مدينة العقبة وكافة المحافظات، ونصل إليكم أينما كنتم مع توفير حلول واستشارات رقمية أونلاين لمؤسستكم.</p>
+        </div>
     </div>
-    
-    <h1>Human Resources</h1>
-    <p>استشارات وإدارة الموارد البشرية للشركات والأعمال الصغيرة</p>
 </header>
 
 <div class="container">
@@ -186,7 +270,7 @@
         <div class="card">
             <h3>الباقة الأساسية</h3>
             <span class="target">مناسبة لـ 1 - 5 موظفين</span>
-            <div class="price-tag">70 <span>د.أ / شهرياً</span></div>
+            <div class="price-tag">50 <span>د.أ / شهرياً</span></div>
             <ul>
                 <li>صياغة عقود العمل القانونية</li>
                 <li>إعداد كشوفات الرواتب (Payroll)</li>
@@ -198,7 +282,7 @@
         <div class="card">
             <h3>الباقة المتقدمة</h3>
             <span class="target">مناسبة لـ 6 - 15 موظفاً</span>
-            <div class="price-tag">150 <span>د.أ / شهرياً</span></div>
+            <div class="price-tag">100 <span>د.أ / شهرياً</span></div>
             <ul>
                 <li>جميع مميزات الباقة الأساسية</li>
                 <li>متابعة اقتطاعات الضمان الاجتماعي</li>
@@ -210,7 +294,7 @@
         <div class="card">
             <h3>الباقة الشاملة</h3>
             <span class="target">مناسبة حتى 25 موظفاً</span>
-            <div class="price-tag">230 <span>د.أ / شهرياً</span></div>
+            <div class="price-tag">180 <span>د.أ / شهرياً</span></div>
             <ul>
                 <li>جميع مميزات الباقة المتقدمة</li>
                 <li>خدمات التوظيف وفرز السير الذاتية</li>
@@ -228,7 +312,7 @@
 </div>
 
 <footer>
-    <p>© جميع الحقوق محفوظة - خدمات الموارد البشرية المستقلة | Human Resources</p>
+    <p>© جميع الحقوق محفوظة - خدمات الموارد البشرية المستقلة | Reham HR Services</p>
 </footer>
 
 </body>
