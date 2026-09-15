@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-pink: #c2527a;
-            --soft-bg: #faf7f8;
-            --card-bg: #f5edef;
-            --text-dark: #333333;
+            --primary-pink: #a84b6c;
+            --soft-bg: #fcf9fa;
+            --card-bg: #f7edeff0;
+            --text-dark: #2c2c2c;
             --text-muted: #666666;
-            --border-radius: 12px;
+            --whatsapp-color: #25D366;
         }
 
         * {
@@ -28,125 +28,177 @@
             background-color: var(--soft-bg);
             color: var(--text-dark);
             line-height: 1.6;
-            padding: 20px 10px;
+            padding: 30px 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             text-align: center;
         }
 
-        /* --- قسم اللوجو والشعار --- */
+        /* --- اللوجو الهيدر --- */
         .logo-container {
-            margin: 20px auto 10px;
+            margin: 10px auto 15px;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .logo-svg {
-            width: 280px;
-            height: 280px;
+            width: 250px;
+            height: 250px;
         }
 
         .site-title-en {
             font-family: 'Alex Brush', cursive;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             color: var(--primary-pink);
-            margin-top: -10px;
-            margin-bottom: 5px;
+            margin-top: 5px;
             font-weight: normal;
         }
 
         .site-subtitle-ar {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-pink);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
-        /* --- قسم الكروت التعريفية --- */
+        /* --- شبكة المعلومات (الكروت) --- */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 40px;
         }
 
         .info-card {
             background-color: var(--card-bg);
-            border: 2px solid #ebd8de;
-            border-radius: var(--border-radius);
-            padding: 20px;
+            border-radius: 12px;
+            padding: 22px 20px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
         .info-card h3 {
             color: var(--primary-pink);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            font-weight: 700;
         }
 
         .info-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            line-height: 1.7;
         }
 
-        /* --- قسم باقات الخدمات والأسعار --- */
+        /* --- الباقات والأسعار --- */
         .section-title {
             color: var(--primary-pink);
             font-size: 1.8rem;
             font-weight: 700;
-            margin: 40px 0 25px;
+            margin: 35px 0 25px;
         }
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            margin-bottom: 40px;
         }
 
         .package-card {
             background-color: var(--card-bg);
-            border: 2px solid #ebd8de;
-            border-radius: var(--border-radius);
+            border-radius: 12px;
             padding: 25px 20px;
-            text-align: center;
-            transition: transform 0.2s ease;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .package-card:hover {
-            transform: translateY(-3px);
+        .package-header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #dca2b5;
         }
 
         .package-title {
             color: var(--primary-pink);
             font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 12px;
         }
 
-        .package-desc {
+        .package-subtitle {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 3px;
         }
 
-        @media (max-width: 600px) {
-            .logo-svg {
-                width: 220px;
-                height: 220px;
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .package-features li {
+            color: var(--text-dark);
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 20px;
+            line-height: 1.5;
+        }
+
+        .package-features li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: var(--primary-pink);
+            font-weight: bold;
+        }
+
+        /* --- قسم زر الواتساب --- */
+        .whatsapp-section {
+            margin-top: 40px;
+            padding-top: 20px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--whatsapp-color);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
             }
-            .site-title-en {
-                font-size: 2.2rem;
-            }
-            .site-subtitle-ar {
-                font-size: 1.1rem;
+            .packages-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -155,57 +207,36 @@
 
     <div class="container">
         
-        <!-- قسم الشعار الهيدر مع الرسم البسيط للدفتر والقلم -->
+        <!-- اللوجو الداخلي الدائري -->
         <div class="logo-container">
             <svg class="logo-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <!-- الدائرة المنقطة الخارجية -->
-                <circle cx="150" cy="150" r="135" fill="none" stroke="#4a3b32" stroke-width="2.5" stroke-dasharray="6,6"/>
+                <!-- الدائرة المنقطة -->
+                <circle cx="150" cy="150" r="135" fill="none" stroke="#4a3b32" stroke-width="2" stroke-dasharray="5,5"/>
                 
-                <!-- المسار النصي المنحني "HUMAN RESOURCES" -->
-                <path id="textArc" fill="none" stroke="none" d="M 50 150 A 100 100 0 0 1 250 150" />
-                <text font-family="'Cairo', 'Arial', sans-serif" font-size="20" font-weight="700" fill="#3a2e2b" letter-spacing="4.5">
+                <!-- النص المنحني علوياً -->
+                <path id="textArc" fill="none" stroke="none" d="M 45 150 A 105 105 0 0 1 255 150" />
+                <text font-family="'Cairo', sans-serif" font-size="19" font-weight="700" fill="#2c2c2c" letter-spacing="3.5">
                     <textPath href="#textArc" startOffset="50%" text-anchor="middle">
                         HUMAN RESOURCES
                     </textPath>
                 </text>
 
-                <!-- رسمة الدفتر والقلم البسيطة والتعبيرية -->
-                <g transform="translate(150, 140)">
-                    <!-- غلاف الدفتر/الدفاتر المائلة الخلفية -->
-                    <rect x="-38" y="-38" width="56" height="70" rx="5" fill="#f2e2e6" stroke="#4a3b32" stroke-width="2.5" transform="rotate(-8)" />
+                <!-- أيقونة الدفتر والقلم البسيطة بالنص -->
+                <g transform="translate(150, 135)">
+                    <rect x="-24" y="-28" width="48" height="58" rx="4" fill="#ffffff" stroke="#4a3b32" stroke-width="2.5"/>
+                    <rect x="-18" y="-33" width="36" height="8" rx="2" fill="#a84b6c" stroke="#4a3b32" stroke-width="2"/>
+                    <line x1="-14" y1="-10" x2="14" y2="-10" stroke="#a84b6c" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="-14" y1="0" x2="14" y2="0" stroke="#c592a4" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="-14" y1="10" x2="4" y2="10" stroke="#c592a4" stroke-width="2" stroke-linecap="round"/>
                     
-                    <!-- الدفتر الرئيسي الأمامي -->
-                    <rect x="-30" y="-32" width="58" height="72" rx="5" fill="#ffffff" stroke="#4a3b32" stroke-width="2.8"/>
-                    
-                    <!-- أسطر الدفتر الداخلية -->
-                    <line x1="-18" y1="-16" x2="16" y2="-16" stroke="#c2527a" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="-18" y1="-4" x2="16" y2="-4" stroke="#d2b0ba" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="-18" y1="8" x2="16" y2="8" stroke="#d2b0ba" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="-18" y1="20" x2="4" y2="20" stroke="#d2b0ba" stroke-width="2" stroke-linecap="round"/>
-
-                    <!-- سلك الدفتر الحلزوني على اليسار -->
-                    <circle cx="-30" cy="-22" r="2.5" fill="#4a3b32" />
-                    <circle cx="-30" cy="-10" r="2.5" fill="#4a3b32" />
-                    <circle cx="-30" cy="2" r="2.5" fill="#4a3b32" />
-                    <circle cx="-30" cy="14" r="2.5" fill="#4a3b32" />
-                    <circle cx="-30" cy="26" r="2.5" fill="#4a3b32" />
-
-                    <!-- القلم المائل الأنيق -->
-                    <g transform="translate(12, 5) rotate(-35)">
-                        <!-- جسم القلم -->
-                        <rect x="-4" y="-35" width="8" height="42" rx="2" fill="#c2527a" stroke="#4a3b32" stroke-width="2"/>
-                        <!-- رأس القلم -->
-                        <polygon points="-4,7 4,7 0,18" fill="#e8c5ce" stroke="#4a3b32" stroke-width="2" stroke-linejoin="round"/>
-                        <!-- سن القلم الحبر -->
-                        <polygon points="-1.5,14 1.5,14 0,18" fill="#4a3b32"/>
-                        <!-- مشبك القلم وقبضته الذهبية/الداكنة -->
-                        <rect x="-5" y="-30" width="2" height="15" fill="#4a3b32" rx="1"/>
-                        <line x1="-4" y1="-22" x2="4" y2="-22" stroke="#ffffff" stroke-width="1.5"/>
+                    <g transform="translate(8, 2) rotate(-30)">
+                        <rect x="-3" y="-25" width="6" height="32" rx="2" fill="#a84b6c" stroke="#4a3b32" stroke-width="1.8"/>
+                        <polygon points="-3,7 3,7 0,14" fill="#2c2c2c"/>
                     </g>
                 </g>
 
-                <!-- اسم Reham بخط اليد الجميل أسفل الدائرة -->
-                <text x="150" y="240" font-family="'Alex Brush', cursive, sans-serif" font-size="46" fill="#c2527a" text-anchor="middle">
+                <!-- الاسم Reham أسفل الدائرة -->
+                <text x="150" y="240" font-family="'Alex Brush', cursive" font-size="44" fill="#a84b6c" text-anchor="middle">
                     Reham
                 </text>
             </svg>
@@ -214,7 +245,7 @@
         <h1 class="site-title-en">HR Consulting & Management</h1>
         <h2 class="site-subtitle-ar">استشارات وإدارة الموارد البشرية</h2>
 
-        <!-- قسم كروت المعلومات والخبرة -->
+        <!-- الكروت -->
         <div class="info-grid">
             <div class="info-card">
                 <h3>📍 العقبة - الأردن</h3>
@@ -222,26 +253,73 @@
             </div>
             <div class="info-card">
                 <h3>🎓 خبرة أكثر من 10 سنوات</h3>
-                <p>متخصصون في إدارة الموارد البشرية وتطوير المؤسسات والشركات بكفاءة عالية مع شهادات خبرة معتمدة.</p>
+                <p>متخصصون في إدارة الموارد البشرية وتطوير المؤسسات والشركات بكفاءة عالية مع شهادات خبرة </p>
             </div>
         </div>
 
-        <!-- قسم باقات الخدمات والأسعار -->
+        <!-- باقات الخدمات والأسعار مع التفاصيل -->
         <h2 class="section-title">باقات الخدمات والأسعار</h2>
         
         <div class="packages-grid">
+            <!-- الباقة الأساسية -->
             <div class="package-card">
-                <div class="package-title">الباقة الأساسية</div>
-                <div class="package-desc">مناسبة لـ 1 - 5 موظفين</div>
+                <div>
+                    <div class="package-header">
+                        <div class="package-title">الباقة الأساسية</div>
+                        <div class="package-subtitle">مناسبة لـ 1 - 5 موظفين</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>إعداد وصياغة عقود العمل ونماذج التوظيف.</li>
+                        <li>إنشاء وتحديث ملفات الموظفين الورقية والرقمية.</li>
+                        <li>متابعة الإجازات والدوام اليومي.</li>
+                        <li>استشارات HR شهرية أساسية.</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- الباقة المتقدمة -->
             <div class="package-card">
-                <div class="package-title">الباقة المتقدمة</div>
-                <div class="package-desc">مناسبة لـ 6 - 15 موظفاً</div>
+                <div>
+                    <div class="package-header">
+                        <div class="package-title">الباقة المتقدمة</div>
+                        <div class="package-subtitle">مناسبة لـ 6 - 15 موظفاً</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>جميع مميزات الباقة الأساسية.</li>
+                        <li>إعداد اللوائح الداخلية وسياسات العمل.</li>
+                        <li>إدارة وتقييم الأداء السنوي للموظفين.</li>
+                        <li>تنظيم ومتابعة ملفات الضمان الاجتماعي.</li>
+                        <li>استشارات HR أسبوعية وتطوير الهيكل التنظيمي.</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- الباقة الشاملة -->
             <div class="package-card">
-                <div class="package-title">الباقة الشاملة</div>
-                <div class="package-desc">مناسبة حتى 25 موظفاً</div>
+                <div>
+                    <div class="package-header">
+                        <div class="package-title">الباقة الشاملة</div>
+                        <div class="package-subtitle">مناسبة حتى 25 موظفاً</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>إدارة كاملة لقطاع الموارد البشرية والتوظيف.</li>
+                        <li>إعداد السلالم الوظيفية وتوصيف المهام (Job Descriptions).</li>
+                        <li>إعداد ومعالجة مسيرات رواتب الموظفين.</li>
+                        <li>خطة تدريب وتطوير مستمرة لفريق العمل.</li>
+                        <li>دعم واستشارات يومية مخصصة للمؤسسة.</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+
+        <!-- قسم زر الواتساب -->
+        <div class="whatsapp-section">
+            <a href="https://wa.me/962700000000" class="whatsapp-btn" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                تواصل معنا عبر الواتساب
+            </a>
         </div>
 
     </div>
