@@ -1,80 +1,163 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حلول الموارد البشرية للشركات الصغرى</title>
+    <title>رهام القرعان | استشارات وخدمات الموارد البشرية</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
-        header { background-color: #1e293b; color: white; text-align: center; padding: 40px 20px; }
-        header h1 { margin: 0; font-size: 2.2em; }
-        header p { font-size: 1.1em; color: #cbd5e1; margin-top: 10px; }
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .services { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 25px; flex: 1; min-width: 280px; max-width: 300px; text-align: right; }
-        .card h3 { color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 10px; }
-        .card ul { list-style: none; padding: 0; }
-        .card ul li { margin-bottom: 10px; position: relative; padding-right: 20px; }
-        .card ul li::before { content: "✓"; color: #22c55e; position: absolute; right: 0; font-weight: bold; }
-        .cta-section { text-align: center; background: #3b82f6; color: white; padding: 30px; border-radius: 8px; margin-top: 40px; }
-        .btn { background: #25d366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; display: inline-block; margin-top: 15px; }
-        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9em; margin-top: 40px; }
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            line-height: 1.7; 
+        }
+
+        header { 
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 50px 20px; 
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2em;
+            font-weight: bold;
+            margin: 0 auto 15px auto;
+            border: 4px solid #60a5fa;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 { margin: 10px 0 5px 0; font-size: 2.2em; }
+        header p { font-size: 1.1em; color: #94a3b8; max-width: 600px; margin: 10px auto 0 auto; }
+        
+        .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 35px; font-size: 1.8em; }
+
+        .services { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+        
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            padding: 30px; 
+            flex: 1; 
+            min-width: 280px; 
+            max-width: 320px; 
+            text-align: right; 
+            border-top: 5px solid var(--accent-color);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: var(--primary-color); font-size: 1.4em; margin-top: 0; }
+        .card .target { color: #64748b; font-size: 0.95em; margin-bottom: 15px; display: block; }
+        .card ul { list-style: none; padding: 0; margin-top: 20px; }
+        .card ul li { margin-bottom: 12px; position: relative; padding-right: 25px; font-size: 0.98em; }
+        .card ul li::before { content: "✓"; color: #16a34a; position: absolute; right: 0; font-weight: bold; }
+
+        .cta-section { 
+            text-align: center; 
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
+            color: white; 
+            padding: 40px 20px; 
+            border-radius: 12px; 
+            margin-top: 50px; 
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn { 
+            background: #25d366; 
+            color: white; 
+            padding: 14px 30px; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            font-size: 1.1em; 
+            display: inline-block; 
+            margin-top: 20px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: #1eb857; }
+
+        footer { text-align: center; padding: 25px; color: #64748b; font-size: 0.9em; margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>إدارة الموارد البشرية للشركات والأعمال الصغرى</h1>
-    <p>نُدير شؤون موظفيك بكفاءة وقانونية... لتفرّغ أنت لنماء عملك</p>
+    <div class="profile-img">HR</div>
+    <h1>رهام القرعان</h1>
+    <p>استشارات وإدارة الموارد البشرية للشركات والأعمال الصغيرة | خبرة أكثر من 14 عاماً في التأسيس والتنظيم</p>
 </header>
 
 <div class="container">
-    <h2 style="text-align: center; color: #1e293b; margin-bottom: 30px;">باقات الخدمات الشهرية</h2>
+    <h2 class="section-title">باقات الخدمات والحلول الإدارية</h2>
     
     <div class="services">
         <div class="card">
             <h3>الباقة الأساسية</h3>
-            <p><strong>تستهدف 1 - 5 موظفين</strong></p>
+            <span class="target">مناسبة لـ 1 - 5 موظفين</span>
             <ul>
                 <li>صياغة عقود العمل القانونية</li>
                 <li>إعداد كشوفات الرواتب (Payroll)</li>
-                <li>إنشاء أرشيف رقمي للموظفين</li>
-                <li>متابعة السجلات والإجازات</li>
+                <li>إنشاء الأرشيف الرقمي للموظفين</li>
+                <li>متابعة الإجازات والسجلات السنوية</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>الباقة المتقدمة</h3>
-            <p><strong>تستهدف 6 - 15 موظفاً</strong></p>
+            <span class="target">مناسبة لـ 6 - 15 موظفاً</span>
             <ul>
                 <li>جميع مميزات الباقة الأساسية</li>
                 <li>متابعة اقتطاعات الضمان الاجتماعي</li>
-                <li>إعداد لائحة العمل الداخلية</li>
-                <li>إدارة الاستقالات والمستحقات</li>
+                <li>إعداد لائحة العمل الداخلية للمؤسسة</li>
+                <li>إدارة ملفات الاستقالات والمستحقات</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>الباقة الشاملة</h3>
-            <p><strong>حتى 25 موظفاً</strong></p>
+            <span class="target">مناسبة حتى 25 موظفاً</span>
             <ul>
                 <li>جميع مميزات الباقة المتقدمة</li>
                 <li>خدمات التوظيف وفرز السير الذاتية</li>
                 <li>إعداد الهيكل التنظيمي والوصف الوظيفي</li>
-                <li>استشارات إدارية دورية</li>
+                <li>استشارات إدارية وقانونية دورية</li>
             </ul>
         </div>
     </div>
 
     <div class="cta-section">
         <h2>هل ترغب في تنظيم ملفات موظفيك وتوفير التكاليف؟</h2>
-        <p>تواصل معي اليوم للحصول على استشارة مجانية أولى ولتحديد الباقة المناسبة لعملك.</p>
-        <a href="https://wa.me/962798600632" class="btn" target="_blank">تواصل عبر الواتساب مباشرة</a>
+        <p>تواصل معي اليوم للحصول على استشارة أولية مجانية ولتحديد الباقة المناسبة لعملك.</p>
+        <a href="https://wa.me/962798600632" class="btn" target="_blank">تواصل عبر الواتساب مباشرة 💬</a>
     </div>
 </div>
 
 <footer>
-    <p>© جميع الحقوق محفوظة - خدمات الموارد البشرية المستقلة</p>
+    <p>© جميع الحقوق محفوظة - خدمات الموارد البشرية المستقلة | رهام القرعان</p>
 </footer>
 
 </body>
