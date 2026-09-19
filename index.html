@@ -171,21 +171,47 @@
 
         .cta-section h2 { margin-top: 0; color: var(--dark-pink); }
 
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
         .btn { 
-            background: #25d366; 
-            color: white; 
-            padding: 15px 35px; 
+            padding: 14px 28px; 
             text-decoration: none; 
             border-radius: 30px; 
             font-weight: bold; 
-            font-size: 1.1em; 
-            display: inline-block; 
-            margin-top: 20px; 
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s;
+            font-size: 1.05em; 
+            display: inline-flex; 
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
         }
 
-        .btn:hover { background: #1eb857; transform: scale(1.05); }
+        .btn-whatsapp {
+            background: #25d366; 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover { 
+            background: #1eb857; 
+            transform: scale(1.05); 
+        }
+
+        .btn-facebook {
+            background: #1877f2; 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+        }
+
+        .btn-facebook:hover { 
+            background: #1464cc; 
+            transform: scale(1.05); 
+        }
 
         footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.9em; margin-top: 40px; }
 
@@ -203,10 +229,10 @@
         <!-- الكارت الأيمن -->
         <div class="header-card">
             <h4>🏆 خبرة أكثر من 10 سنوات</h4>
-            <p>متخصصون في إدارة الموارد البشرية وتطوير المؤسسات والشركات بكفاءة عالية مع شهادات خبرة ></p>
+            <p>متخصصون في إدارة الموارد البشرية وتطوير المؤسسات والشركات وفق شهادات خبرة معتمدة من مكتب العمل.</p>
         </div>
 
-        <!-- اللوجو الأوسط مع رسمة الدفتر والقلم البرمجية -->
+        <!-- اللوجو الأوسط -->
         <div class="logo-center">
             <div class="logo-box">
                 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
@@ -222,32 +248,20 @@
                         </textPath>
                     </text>
 
-                    <!-- رسمة الدفتر والقلم بدلاً من الوردة -->
-                    <g transform="translate(150, 132)">
-                        <!-- ورقة/دفتر خلفي مائل -->
-                        <rect x="-32" y="-36" width="50" height="64" rx="6" fill="#fbcfe8" stroke="#be185d" stroke-width="2" transform="rotate(-10)" />
-                        
-                        <!-- الدفتر/اللوح الرئيسي الأمامي -->
-                        <rect x="-26" y="-30" width="52" height="66" rx="6" fill="#ffffff" stroke="#be185d" stroke-width="2.5"/>
-                        
-                        <!-- مشبك الدفتر العلوي -->
-                        <rect x="-12" y="-35" width="24" height="8" rx="2" fill="#ec4899" stroke="#be185d" stroke-width="1.8"/>
-                        <circle cx="0" cy="-31" r="1.8" fill="#ffffff"/>
+                    <!-- زهرة البيوني المتفتحة والساق النازل -->
+                    <g transform="translate(150, 85)">
+                        <path d="M-25 15 C-40 -10 -15 -35 0 -35 C15 -35 40 -10 25 15 C15 30 -15 30 -25 15 Z" fill="#f472b6" opacity="0.75" />
+                        <path d="M-20 10 C-30 -15 -5 -30 0 -30 C5 -30 30 -15 20 10 C10 25 -10 25 -20 10 Z" fill="#ec4899" opacity="0.85" />
+                        <path d="M-15 5 C-20 -10 0 -22 0 -22 C0 -22 20 -10 15 5 C8 15 -8 15 -15 5 Z" fill="#db2777" />
+                        <circle cx="0" cy="-5" r="4" fill="#ffffff" opacity="0.9" />
 
-                        <!-- أسطر الدفتر الداخلية -->
-                        <line x1="-16" y1="-12" x2="16" y2="-10" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="-16" y1="-1" x2="16" y2="-1" stroke="#f472b6" stroke-width="1.8" stroke-linecap="round"/>
-                        <line x1="-16" y1="9" x2="16" y2="9" stroke="#f472b6" stroke-width="1.8" stroke-linecap="round"/>
-                        <line x1="-16" y1="19" x2="4" y2="19" stroke="#f472b6" stroke-width="1.8" stroke-linecap="round"/>
+                        <!-- الأوراق الخضراء -->
+                        <path d="M-12 20 C-30 20 -35 30 -40 35 C-28 38 -18 32 -10 24 Z" fill="#4ade80" />
+                        <path d="M12 20 C30 20 35 30 40 35 C28 38 18 32 10 24 Z" fill="#22c55e" />
+                        <path d="M-8 35 C-22 42 -25 52 -30 58 C-18 58 -10 50 -5 40 Z" fill="#16a34a" />
 
-                        <!-- القلم المائل الأنيق -->
-                        <g transform="translate(10, -5) rotate(-32)">
-                            <rect x="-3.5" y="-28" width="7" height="36" rx="2" fill="#be185d" stroke="#831843" stroke-width="1.5"/>
-                            <polygon points="-3.5,8 3.5,8 0,16" fill="#fbcfe8" stroke="#831843" stroke-width="1.5" stroke-linejoin="round"/>
-                            <polygon points="-1.5,12 1.5,12 0,16" fill="#831843"/>
-                            <!-- مشبك القلم -->
-                            <rect x="-4.5" y="-23" width="1.8" height="14" fill="#fbcfe8" rx="1"/>
-                        </g>
+                        <!-- الساق النازل لتحت -->
+                        <path d="M0 20 Q-2 60 0 105" fill="none" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" />
                     </g>
 
                     <!-- اسم Reham المترابط الأنيق -->
@@ -257,7 +271,6 @@
                 </svg>
             </div>
             
-            <!-- العنوان الإنجليزي والترجمة العربية -->
             <h1>HR Consulting & Management</h1>
             <p>استشارات وإدارة الموارد البشرية</p>
         </div>
@@ -314,7 +327,11 @@
     <div class="cta-section">
         <h2>هل ترغب في تنظيم ملفات موظفيك وتوفير التكاليف؟</h2>
         <p>تواصل معي اليوم للحصول على استشارة أولية مجانية ولتحديد الباقة المناسبة لعملك.</p>
-        <a href="https://wa.me/962798600632" class="btn" target="_blank">تواصل عبر الواتساب مباشرة 💬</a>
+        
+        <div class="cta-buttons">
+            <a href="https://wa.me/962798600632" class="btn btn-whatsapp" target="_blank">تواصل عبر الواتساب مباشرة 💬</a>
+            <a href="https://www.facebook.com/share/186NXWz96A/" class="btn btn-facebook" target="_blank">تابعنا على الفيسبوك 👍</a>
+        </div>
     </div>
 </div>
 
